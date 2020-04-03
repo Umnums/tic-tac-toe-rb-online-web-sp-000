@@ -1,8 +1,9 @@
 
 def position_taken?(board,index)
   if (board[index] == "" || board[index] == " " || board[index] == nil)
-    return false
+        return false
   else
+    puts "true"
     return true
   end
 end
@@ -31,18 +32,10 @@ def move(board, index, current_player)
   board[index] = current_player
 end
 
-def turn_count(board)
-  count = 0
-  i = 0
-  while i < board.length
-    if position_taken?(board,i)
-      count + 1
-    end
-    i + 1
-  end
-  return count
-end
 
+def position_taken?(board, location)
+  board[location] != " " && board[location] != ""
+end
 
 def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
@@ -84,7 +77,7 @@ WIN_COMBINATIONS = [
   [2,4,6] #diagonals
 ]
 
-board = ["", "X", "","","X","","","O",""]
+#board = ["", "X", "","","X","","","O",""]
 def won?(board)
   counter = 0
   WIN_COMBINATIONS.each do |array|
@@ -129,6 +122,17 @@ def winner(board)
   end
 end
 
+def turn_count(board)
+  count = 0
+  board.each do |pos|
+    if (pos == "" || pos == " " || pos == nil)
+
+    else
+      count += 1
+    end
+  end
+  return count
+end
 
 def current_player(board)
   turns = turn_count(board)
@@ -140,4 +144,4 @@ def current_player(board)
 end
 
 
-play(board)
+#play(board)
