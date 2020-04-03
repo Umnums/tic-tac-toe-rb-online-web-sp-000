@@ -39,8 +39,9 @@ def turn_count(board)
     if position_taken?(board,i)
       count + 1
     end
-    i +1
+    i + 1
   end
+  return count
 end
 
 def position_taken?(board, location)
