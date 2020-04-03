@@ -3,7 +3,6 @@ def position_taken?(board,index)
   if (board[index] == "" || board[index] == " " || board[index] == nil)
         return false
   else
-    puts "true"
     return true
   end
 end
@@ -44,9 +43,6 @@ def turn_count(board)
   return count
 end
 
-def position_taken?(board, location)
-  board[location] != " " && board[location] != ""
-end
 
 def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
