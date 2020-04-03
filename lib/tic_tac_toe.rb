@@ -88,7 +88,7 @@ WIN_COMBINATIONS = [
   [2,4,6] #diagonals
 ]
 
-board = ["", "X", "","","X","","","O",""]
+#board = ["", "X", "","","X","","","O",""]
 def won?(board)
   counter = 0
   WIN_COMBINATIONS.each do |array|
@@ -133,17 +133,7 @@ def winner(board)
   end
 end
 
-def turn_count(board)
-  count = 0
-  board.each do |pos|
-    if (pos == "" || pos == " " || pos == nil)
 
-    else
-      count += 1
-    end
-  end
-  return count
-end
 
 def current_player(board)
   turns = turn_count(board)
@@ -155,4 +145,4 @@ def current_player(board)
 end
 
 
-play(board)
+#play(board)
